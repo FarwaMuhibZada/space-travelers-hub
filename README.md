@@ -98,13 +98,13 @@ To to build for the production, execute the following command:
 
 👤 **Sumita Baloch**
 
-- GitHub: [Sumita Baloch](https://github.com/bernabasy)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/bernabas-yosef-74b571186)
+- GitHub: [Sumita Baloch](https://github.com/S-BLH)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sumita-balouch-959197309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
 👤 **Masoma Rezaie**
 
-- GitHub: [Masoma Rezaie](https://github.com/Outkarm)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/john-kpordje-866749241/)
+- GitHub: [Masoma Rezaie](https://github.com/MasomRezaie)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/miss-masoma-99b85522a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 
 <!-- CONTRIBUTING -->

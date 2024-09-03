@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import "./Navigation.css";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import './Navigation.css';
+import { NavLink } from 'react-router-dom';
 import icon from '../images/icon.jpg';
-const Navigation = () => {
+
+function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      setMenuOpen(!menuOpen);
+    }
+  };
 
   return (
     <nav>
@@ -11,14 +18,20 @@ const Navigation = () => {
         <img src={icon} alt="logo" className="logo" />
         <h3 className="mt-2 mx-4">Space Travelers Hub</h3>
       </div>
-      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div
+        className="menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+      >
+        <span />
+        <span />
+        <span />
       </div>
-      <ul className={menuOpen ? "open" : ""}>
+      <ul className={menuOpen ? 'open' : ''}>
         <li>
-          <NavLink to="/">Rokets</NavLink>
+          <NavLink to="/">Rockets</NavLink>
         </li>
         <li>
           <NavLink to="/missions">Missions</NavLink>
@@ -32,6 +45,6 @@ const Navigation = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default Navigation;

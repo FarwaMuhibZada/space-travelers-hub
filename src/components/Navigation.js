@@ -24,6 +24,7 @@ function Navigation() {
         onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
+        aria-label="Toggle menu"
       >
         <span />
         <span />

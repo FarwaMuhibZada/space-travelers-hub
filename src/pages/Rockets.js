@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setRockets } from '../redux/actions';
+import { setRockets, toggleReservation } from '../redux/actions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Rockets() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
-  const [reservedRockets, setReservedRockets] = useState({});
+  const reservedRockets = useSelector((state) => state.reservedRockets);
 
   useEffect(() => {
     const fetchRockets = async () => {
@@ -23,10 +23,7 @@ function Rockets() {
   }, [dispatch]);
 
   const handleReservationToggle = (rocketId) => {
-    setReservedRockets((prev) => ({
-      ...prev,
-      [rocketId]: !prev[rocketId],
-    }));
+    dispatch(toggleReservation(rocketId));
   };
 
   return (
@@ -47,7 +44,7 @@ function Rockets() {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">{rocket.name}</h5>
+                    <h5 className="card-title">{rocket.rocket_name}</h5>
                     <p className="card-text">
                       <strong>ID:</strong>
                       <br />
@@ -56,10 +53,10 @@ function Rockets() {
                     <p className="card-text">
                       <strong>Description:</strong>
                       {reservedRockets[rocket.id] && (
-                      <span className=" badge bg-secondary text-white mx-2">
-                        Reserved
-                      </span>
-                    )}
+                        <span className="badge bg-secondary text-white mx-2">
+                          Reserved
+                        </span>
+                      )}
                       <br />
                       {rocket.description}
                     </p>

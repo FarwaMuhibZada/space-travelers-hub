@@ -1,7 +1,8 @@
-import { SET_ROCKETS } from './actions';
+import { SET_ROCKETS, TOGGLE_RESERVATION } from './actions';
 
 const initialState = {
   rockets: [],
+  reservedRockets: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,6 +11,14 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         rockets: action.payload,
+      };
+    case TOGGLE_RESERVATION:
+      return {
+        ...state,
+        reservedRockets: {
+          ...state.reservedRockets,
+          [action.payload]: !state.reservedRockets[action.payload],
+        },
       };
     default:
       return state;

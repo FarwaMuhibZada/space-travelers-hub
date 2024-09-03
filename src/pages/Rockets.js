@@ -21,10 +21,11 @@ function Rockets() {
 
     fetchRockets();
   }, [dispatch]);
-  
+
   return (
     <div className="container">
       <h1 className="my-4">Rockets</h1>
+      <p>{rockets.name}</p>
     </div>
   );
 }

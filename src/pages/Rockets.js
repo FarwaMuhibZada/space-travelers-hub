@@ -44,7 +44,7 @@ function Rockets() {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">{rocket.rocket_name}</h5>
+                    <h5 className="card-title">{rocket.name}</h5>
                     <p className="card-text">
                       <strong>ID:</strong>
                       <br />

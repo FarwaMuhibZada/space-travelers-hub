@@ -14,14 +14,12 @@ const missionsReducer = (state = initialState.missions, action) => {
       return state.map((mission) =>
         mission.mission_id === action.payload
           ? { ...mission, reserved: true }
-          : mission
+          : mission,
       );
-
     case LEAVE_MISSION:
       return state.map((mission) =>
-        mission.mission_id === action.payload
-          ? { ...mission, reserved: false }
-          : mission
+        mission.mission_id === action.payload ? { ...mission, reserved: false }
+          : mission,
       );
     default:
       return state;

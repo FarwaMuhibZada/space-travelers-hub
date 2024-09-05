@@ -11,26 +11,23 @@ const missionsReducer = (state = initialState.missions, action) => {
       return action.payload;
 
     case JOIN_MISSION:
-      return state.map((mission) =>
-        mission.mission_id === action.payload
-          ? { ...mission, reserved: true }
-          : mission,
-      );
+      return state.map((mission) => (mission.mission_id === action.payload
+        ? { ...mission, reserved: true }
+        : mission));
+
     case LEAVE_MISSION:
-      return state.map((mission) =>
-        mission.mission_id === action.payload ? { ...mission, reserved: false }
-          : mission,
-      );
+      return state.map((mission) => (mission.mission_id === action.payload
+        ? { ...mission, reserved: false }
+        : mission));
+
     default:
       return state;
   }
 };
 
 // Combine all reducers into one rootReducer
-const rootReducer = (state = initialState, action) => {
-  return {
-    missions: missionsReducer(state.missions, action),
-  };
-};
+const rootReducer = (state = initialState, action) => ({
+  missions: missionsReducer(state.missions, action),
+});
 
 export default rootReducer;

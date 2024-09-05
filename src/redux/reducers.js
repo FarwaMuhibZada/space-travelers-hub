@@ -23,7 +23,6 @@ const missionsReducer = (state = initialState.missions, action) => {
           ? { ...mission, reserved: false }
           : mission
       );
-
     default:
       return state;
   }

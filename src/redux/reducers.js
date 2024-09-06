@@ -1,7 +1,14 @@
-import { SET_DRAGONS, DRAGON_TOGGLE_RESERVATION } from './actions';
+import {
+  SET_ROCKETS, TOGGLE_RESERVATION,
+  SET_DRAGONS, DRAGON_TOGGLE_RESERVATION,
+  SET_MISSIONS, JOIN_MISSION, LEAVE_MISSION,
+} from './actions';
 
 const initialState = {
-  dragons: [],
+  rockets: [],
+  reservedRockets: {},
+  missions: [],
+    dragons: [],
   reservedDragons: {},
 };
 
@@ -21,6 +28,47 @@ const rootReducer = (state = initialState, action) => {
           [action.payload]: !state.reservedDragons[action.payload], // Toggle reservation
         },
       };
+
+    case SET_ROCKETS:
+      return {
+        ...state,
+        rockets: action.payload,
+      };
+    case TOGGLE_RESERVATION:
+      return {
+        ...state,
+        reservedRockets: {
+          ...state.reservedRockets,
+          [action.payload]: !state.reservedRockets[action.payload],
+        },
+      };
+
+    case SET_MISSIONS:
+      return {
+        ...state,
+        missions: action.payload,
+      };
+
+    case JOIN_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) => (
+          mission.mission_id === action.payload
+            ? { ...mission, reserved: true }
+            : mission
+        )),
+      };
+
+    case LEAVE_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) => (
+          mission.mission_id === action.payload
+            ? { ...mission, reserved: false }
+            : mission
+        )),
+      };
+
     default:
       return state;
   }

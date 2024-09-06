@@ -28,4 +28,3 @@ export const leaveMission = (missionId) => ({
   type: LEAVE_MISSION,
   payload: missionId,
 });
-

@@ -16,7 +16,7 @@ const Missions = () => {
           throw new Error('Failed to fetch missions');
         }
         const data = await response.json();
-        dispatch(setMissions(data.map(mission => ({ ...mission, reserved: false }))));
+        dispatch(setMissions(data.map((mission) => ({ ...mission, reserved: false }))));
         setLoading(false);
       } catch (err) {
         setError(err.message);
@@ -28,7 +28,7 @@ const Missions = () => {
   }, [dispatch]);
 
   const handleJoinLeave = (missionId) => {
-    const mission = missions.find(m => m.mission_id === missionId);
+    const mission = missions.find((m) => m.mission_id === missionId);
     if (mission) {
       if (mission.reserved) {
         dispatch(leaveMission(missionId));
@@ -43,7 +43,8 @@ const Missions = () => {
   }
 
   if (error) {
-    return <div className="text-center mt-5 text-danger">Error: {error}</div>;
+    return <div className="text-center mt-5 text-danger">
+    Error: {error}</div>;
   }
 
   return (
@@ -70,6 +71,7 @@ const Missions = () => {
               </td>
               <td>
                 <button
+                  type="button"
                   className={`btn btn-sm ${mission.reserved ? 'btn-outline-danger' : 'btn-outline-secondary'}`}
                   onClick={() => handleJoinLeave(mission.mission_id)}
                 >

@@ -13,48 +13,51 @@ const initialState = {
 };
 
 // Root reducer for all entities: rockets, dragons, missions
-const rootReducer = (state = initialState, action) => {
+const rootReducer = (state, action) => {
+  // Set default state if not provided
+  const currentState = state || initialState;
+
   switch (action.type) {
     case SET_ROCKETS:
       return {
-        ...state,
+        ...currentState,
         rockets: action.payload,
       };
 
     case TOGGLE_RESERVATION:
       return {
-        ...state,
+        ...currentState,
         reservedRockets: {
-          ...state.reservedRockets,
-          [action.payload]: !state.reservedRockets[action.payload], // Toggle reservation
+          ...currentState.reservedRockets,
+          [action.payload]: !currentState.reservedRockets[action.payload], // Toggle reservation
         },
       };
 
     case SET_DRAGONS:
       return {
-        ...state,
+        ...currentState,
         dragons: action.payload,
       };
 
     case DRAGON_TOGGLE_RESERVATION:
       return {
-        ...state,
+        ...currentState,
         reservedDragons: {
-          ...state.reservedDragons,
-          [action.payload]: !state.reservedDragons[action.payload], // Toggle reservation
+          ...currentState.reservedDragons,
+          [action.payload]: !currentState.reservedDragons[action.payload], // Toggle reservation
         },
       };
 
     case SET_MISSIONS:
       return {
-        ...state,
+        ...currentState,
         missions: action.payload,
       };
 
     case JOIN_MISSION:
       return {
-        ...state,
-        missions: state.missions.map((mission) => (
+        ...currentState,
+        missions: currentState.missions.map((mission) => (
           mission.mission_id === action.payload
             ? { ...mission, reserved: true } // Set reserved to true
             : mission
@@ -63,8 +66,8 @@ const rootReducer = (state = initialState, action) => {
 
     case LEAVE_MISSION:
       return {
-        ...state,
-        missions: state.missions.map((mission) => (
+        ...currentState,
+        missions: currentState.missions.map((mission) => (
           mission.mission_id === action.payload
             ? { ...mission, reserved: false } // Set reserved to false
             : mission
@@ -72,7 +75,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     default:
-      return state;
+      return currentState;
   }
 };
 

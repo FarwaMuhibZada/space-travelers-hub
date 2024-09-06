@@ -11,9 +11,9 @@ function MyProfile() {
   const missions = useSelector((state) => state.missions);
 
   // Helper function to get reserved items
-  const getReservedItems = (items, reservedItems) =>
-    items.filter((item) => reservedItems[item.id]);
-
+  const getReservedItems = (items, reservedItems) => (
+    items.filter((item) => reservedItems[item.id])
+  );
   // Get reserved rockets, dragons, and active missions
   const reservedRocketsList = getReservedItems(rockets, reservedRockets);
   const reservedDragonsList = getReservedItems(dragons, reservedDragons);

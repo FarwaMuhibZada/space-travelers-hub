@@ -15,7 +15,7 @@ function Rockets() {
         const data = await response.json();
         dispatch(setRockets(data));
       } catch (error) {
-        console.error('Failed to fetch rockets:', error);
+        // console.error('Failed to fetch rockets:', error);
       }
     };
 

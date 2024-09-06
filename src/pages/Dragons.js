@@ -14,7 +14,7 @@ function Dragons() {
         const data = await response.json();
         dispatch(setDragons(data));
       } catch (error) {
-        console.error('Failed to fetch dragons:', error);
+        // console.error('Failed to fetch dragons:', error);
       }
     };
 

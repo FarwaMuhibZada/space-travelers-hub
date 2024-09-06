@@ -55,38 +55,40 @@ function Missions() {
   return (
     <div className="container mt-4">
       <h2>Missions</h2>
-      <table className="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {missions.map((mission) => (
-            <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
-              <td>{mission.description}</td>
-              <td>
-                <span className={`badge ${mission.reserved ? 'bg-info text-light' : 'bg-secondary text-light'}`}>
-                  {mission.reserved ? 'Active Member' : 'Not a Member'}
-                </span>
-              </td>
-              <td>
-                <button
-                  type="button"
-                  className={`btn btn-sm ${mission.reserved ? 'btn-outline-danger' : 'btn-outline-secondary'}`}
-                  onClick={() => handleJoinLeave(mission.mission_id)}
-                >
-                  {mission.reserved ? 'Leave Mission' : 'Join Mission'}
-                </button>
-              </td>
+      <div className="table-responsive">
+        <table className="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Mission</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {missions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td>{mission.mission_name}</td>
+                <td>{mission.description}</td>
+                <td>
+                  <span className={`badge ${mission.reserved ? 'bg-info text-light' : 'bg-secondary text-light'}`}>
+                    {mission.reserved ? 'Active Member' : 'Not a Member'}
+                  </span>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    className={`btn btn-sm ${mission.reserved ? 'btn-outline-danger' : 'btn-outline-secondary'}`}
+                    onClick={() => handleJoinLeave(mission.mission_id)}
+                  >
+                    {mission.reserved ? 'Leave Mission' : 'Join Mission'}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

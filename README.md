@@ -11,6 +11,7 @@
     <li>React</li>
     <li>Redux</li>
     <li>React Bootstrap</li>
+    <li>Css for custom design</li>
   </ul>
 </details>
 

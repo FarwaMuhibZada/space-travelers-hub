@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMissions, joinMission, leaveMission } from '../redux/actions';
 
-const Missions = () => {
+function Missions() {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions);
   const [loading, setLoading] = useState(true);
@@ -89,6 +89,6 @@ const Missions = () => {
       </table>
     </div>
   );
-};
+}
 
 export default Missions;

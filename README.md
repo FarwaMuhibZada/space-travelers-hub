@@ -1,10 +1,8 @@
-<!-- PROJECT DESCRIPTION -->
-
 # 📖 Space Travelers Hub 
 
 >  Space Travelers Hub is a web application based on the real live data from the SpaceX API. This application will allow users to book rockets and join selected space missions.
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠 Built With
 
 
 <details>
@@ -18,7 +16,7 @@
 
 <!-- Features -->
 
-### Key Features <a name="key-features"></a>
+### Key Features 
 
 - **Book rockets**
 - **Join selected space missions**
@@ -26,20 +24,20 @@
 - **Interactive and Responsive**
 
 
-#### 🔭 Future Features <a name="future-features"></a>
+#### 🔭 Future Features
 
 - **Toggle modes according to times of the day**
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo 
 
-- <a href="" target="_blank">Live Demo Link</a>
+- <a href="https://space-traveler-hub-farwamuhibzada.netlify.app/" target="_blank">Live Demo Link</a>
 
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## 💻 Getting Started 
 
 To get a local copy up and running, follow these steps.
 
@@ -89,8 +87,6 @@ To to build for the production, execute the following command:
 
 ## 👥 Authors
 
-<a name="authors"></a>
-
 👤 **Farwa Muhibzada**
 
 - GitHub: [Farwa Muhibzada](https://github.com/FarwaMuhibZada)
@@ -109,12 +105,11 @@ To to build for the production, execute the following command:
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing <a name="contributing"></a>
-
+## 🤝 Contributing 
 Contributions, issues, and feature requests are welcome!
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+## ⭐️ Show your support
 
 If you like this project give me a star.
